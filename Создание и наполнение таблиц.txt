@@ -6,14 +6,6 @@ phone VARCHAR(50) NOT NULL,
 email VARCHAR(50) UNIQUE NOT NULL
 );
 
--- Создание таблицы "users"
-CREATE TABLE users (
-id SERIAL PRIMARY KEY,
-name VARCHAR(50) NOT NULL,
-phone VARCHAR(50) NOT NULL,
-email VARCHAR(50) UNIQUE NOT NULL
-);
-
 -- Наполнение таблицы "users"
 INSERT INTO users (name, phone, email)
 VALUES ('Alexander', +77089247540, 'alex@mail.ru'),
