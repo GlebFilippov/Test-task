@@ -1,0 +1,51 @@
+-- Создание таблицы "users"
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+phone VARCHAR(50) NOT NULL,
+email VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- Создание таблицы "users"
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+phone VARCHAR(50) NOT NULL,
+email VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- Наполнение таблицы "users"
+INSERT INTO users (name, phone, email)
+VALUES ('Alexander', +77089247540, 'alex@mail.ru'),
+('Gleb', +77750839972, 'gleb@gmail.com'),
+('Irina', +77784597077, 'ira@bk.ru');
+
+-- Создание таблицы "orders"
+CREATE TABLE orders (
+id SERIAL PRIMARY KEY,
+user_id INTEGER REFERENCES users(id),
+product VARCHAR(50) NOT NULL,
+price INTEGER NOT NULL
+);
+
+-- Наполнение таблицы "orders"
+INSERT INTO orders (user_id, product, price)
+VALUES (1, 'Phone', 100000),
+(1, 'Watch', 20000),
+(2, 'Laptop', 80000),
+(3, 'TV', 40000);
+
+-- Создание таблицы "payments"
+CREATE TABLE payments (
+id SERIAL PRIMARY KEY,
+order_id INTEGER REFERENCES orders(id),
+amount INTEGER NOT NULL,
+paid_date DATE NOT NULL
+);
+
+-- Наполнение таблицы "payments"
+INSERT INTO payments (order_id, amount, paid_date)
+VALUES (1, 1500, '2023-06-22'),
+(2, 3000, '2023-06-23'),
+(3, 800, '2023-06-24'),
+(4, 400, '2023-06-25');    
