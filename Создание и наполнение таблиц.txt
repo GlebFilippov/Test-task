@@ -8,9 +8,9 @@ email VARCHAR(50) UNIQUE NOT NULL
 
 -- Наполнение таблицы "users"
 INSERT INTO users (name, phone, email)
-VALUES ('Alexander', +77089247540, 'alex@mail.ru'),
-('Gleb', +77750839972, 'gleb@gmail.com'),
-('Irina', +77784597077, 'ira@bk.ru');
+VALUES ('Alexander', '+77089247540', 'alex@mail.ru'),
+('Gleb', '+77750839972', 'gleb@gmail.com'),
+('Irina', '+77784597077', 'ira@bk.ru');
 
 -- Создание таблицы "orders"
 CREATE TABLE orders (
